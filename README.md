@@ -3,7 +3,7 @@
 ## Contents
 |Name|Navigate|
 |:-|:-:|
-|Page|[↗️](https://myselfmohith.github.io/CSE-B-Class-Join/)|
+|Page|[↗️](https://berryallen112000.github.io/CSE-G-Class-Join/)|
 |Preview|[▼](#preview)|
 |Folder Description|[▼](#folder-description)|
 |Build Utils|[▼](#build-utils)|
