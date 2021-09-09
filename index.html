@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icons/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./icons/icon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="theme-color" content="#1962d1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f93025829a.js" crossorigin="anonymous"></script>
+    <title>KLU TT</title>
+</head>
+
+<body>
+    <div id="root">
+        <div id="current-class">
+        </div>
+        <p id="user-info">Hey USER</p>
+        <p><strong>UPDATE:</strong><br /> Now you can share your TimeTable Layout with your Friends.</p>
+        <br>
+        <h3>Course Details</h3>
+        <div class="responsive-table">
+            <table id="course-details">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Faculty name</th>
+                </tr>
+            </table>
+        </div>
+        <p></p>
+
+        <h3>Time Table</h3>
+        <div class="responsive-table">
+            <table id="time-table"></table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="flex-links">
+            <a href="./edit.html"><i class="fas fa-edit"></i>Create</a>
+            <a onclick="clearStorage()" href=""><i class="fas fa-history"></i>Reset</a>
+            <a href="./edit.html#share-button"><i class="fas fa-share-alt"></i>Share</a>
+            <a href="https://github.com/myselfmohith/"><i class="fab fa-github"></i> Repo</a>
+        </div>
+        <p id="time"></p>
+
+    </footer>
+    <script>
+        let serviceWorker = null;
+        (async () => {
+            if ('serviceWorker' in navigator) {
+                try {
+                    serviceWorker = await navigator.serviceWorker.register('./sw.js');
+                } catch (error) {
+                    serviceWorker = null;
+                }
+            }
+        })();
+
+
+        const clearStorage = () => {
+            localStorage.removeItem('application-data');
+            window.location.reload();
+        };
+    </script>
+    <script src="./Scripts/cseG.js"></script>
+    <script src="./Scripts/ui.js"></script>
+    <script src="./Scripts/index.js"></script>
+</body>
+
+</html>
